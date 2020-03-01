@@ -33,7 +33,7 @@
     "sinon": "^7.2.4"
   },
   "dependencies": {
-    "ansi-escapes": "^3.0.0",
+    "ansi-escapes": "^4.3.1",
     "chalk": "^2.0.0",
     "figures": "^2.0.0",
     "run-async": "^2.3.0"
