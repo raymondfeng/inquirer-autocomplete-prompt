@@ -1,21 +1,19 @@
-# inquirer-autocomplete-prompt
+# @raymondfeng/inquirer-autocomplete-prompt
 
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/mokkabonna/inquirer-autocomplete-prompt.svg)](https://greenkeeper.io/)
+This is a folk from [mokkabonna/inquirer-autocomplete-prompt](https://github.com/mokkabonna/inquirer-autocomplete-prompt) to keep dependencies up to date.
 
 Autocomplete prompt for [inquirer](https://github.com/SBoudrias/Inquirer.js)
 
-[![build status](https://secure.travis-ci.org/mokkabonna/inquirer-autocomplete-prompt.svg)](http://travis-ci.org/mokkabonna/inquirer-autocomplete-prompt)
-[![dependency status](https://david-dm.org/mokkabonna/inquirer-autocomplete-prompt.svg)](https://david-dm.org/mokkabonna/inquirer-autocomplete-prompt)
+[![build status](https://secure.travis-ci.org/raymondfeng/inquirer-autocomplete-prompt.svg)](http://travis-ci.org/raymondfeng/inquirer-autocomplete-prompt)
+[![dependency status](https://david-dm.org/raymondfeng/inquirer-autocomplete-prompt.svg)](https://david-dm.org/raymondfeng/inquirer-autocomplete-prompt)
 
 ## Installation
 
 ```
-npm install --save inquirer-autocomplete-prompt
+npm install --save @raymondfeng/inquirer-autocomplete-prompt
 ```
 
 ## Usage
-
 
 This prompt is anonymous, meaning you can register this prompt with the type name you please:
 
@@ -45,30 +43,37 @@ See [inquirer](https://github.com/SBoudrias/Inquirer.js) readme for meaning of a
 
 **validate** is only active when **suggestOnly** is set to **true**. It behaves like validate for the input prompt.
 
-
 #### Example
 
 ```javascript
-inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'));
-inquirer.prompt([{
-  type: 'autocomplete',
-  name: 'from',
-  message: 'Select a state to travel from',
-  source: function(answersSoFar, input) {
-    return myApi.searchStates(input);
-  }
-}]).then(function(answers) {
-  //etc
-});
+inquirer.registerPrompt(
+  'autocomplete',
+  require('inquirer-autocomplete-prompt')
+);
+inquirer
+  .prompt([
+    {
+      type: 'autocomplete',
+      name: 'from',
+      message: 'Select a state to travel from',
+      source: function (answersSoFar, input) {
+        return myApi.searchStates(input);
+      },
+    },
+  ])
+  .then(function (answers) {
+    //etc
+  });
 ```
 
-See also [example.js](https://github.com/mokkabonna/inquirer-autocomplete-prompt/blob/master/example.js) for a working example.
+See also [example.js](https://github.com/raymondfeng/inquirer-autocomplete-prompt/blob/master/example.js) for a working example.
 
 I recommend using this package with [fuzzy](https://www.npmjs.com/package/fuzzy) if you want fuzzy search. Again, see the example for a demonstration of this.
 
 ![Autocomplete prompt](./inquirer.gif)
 
 ## Credits
+
 [Martin Hansen](https://github.com/mokkabonna/)
 
 ## License
